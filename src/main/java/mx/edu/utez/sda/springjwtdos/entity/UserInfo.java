@@ -21,6 +21,6 @@ public class UserInfo {
     private String username;
     private String password;
     private String roles;
-    private boolean nonLocekd;
+    private boolean nonLocked;
 
 }

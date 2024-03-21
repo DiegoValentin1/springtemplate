@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.security.PrivilegedAction;
 import java.util.Optional;
 
 @Service
@@ -28,7 +27,7 @@ public class UserInfoService implements UserDetailsService {
 
     public String guardarUser(UserInfo userInfo) {
         userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
-        userInfo.setNonLocekd(true);
+        userInfo.setNonLocked(true);
         repository.save(userInfo);
         return  "Usuario registrado";
     }

@@ -21,6 +21,7 @@ public class UserInfoDetails implements UserDetails {
         password = userInfo.getPassword();
         authorities = Arrays.stream(userInfo.getRoles().split(","))
                 .map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+        nomLoked = userInfo.isNonLocked();
     }
 
     @Override
